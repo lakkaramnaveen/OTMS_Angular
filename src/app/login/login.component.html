@@ -1,0 +1,34 @@
+<h3>Login</h3>
+<div class="jumbotron">
+    <form class="form-group" (ngSubmit)="login()" #myForm = "ngForm">
+        <label for="user.userPassword"> Enter Username</label>
+        <input #username="ngModel" type="text" [(ngModel)]="user.userName" required  name ="userame" id="username" pattern="[a-zA-Z ]+" class ="form-control"> 
+            <div *ngIf="username.invalid && (username.dirty || username.touched)" class="alert alert-danger">
+                <div *ngIf="username.errors.required">
+                    Username is Required
+                </div>
+                <div *ngIf="username.errors.pattern">
+                    Username Should contain only characters
+                </div>
+            </div>
+            <br>
+            <div class ="form-group">
+                <label for="user.userPassword"> Enter Password</label>
+                <input #password="ngModel" type="password" [(ngModel)]="user.userPassword" required name ="password" id="password" name="password" class ="form-control">
+                <div *ngIf="password.invalid && (password.dirty || password.touched)" class="alert alert-danger">
+                    <div *ngIf="password.errors.required">
+                      Password is Required
+                    </div>
+                </div>
+            </div>
+            <button class="btn btn-primary" [disabled]="!myForm.form.valid" type="submit">Submit</button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="#">New User ? Register</a>
+     
+   
+   <br>
+   <br>
+    </form>
+</div>
+
