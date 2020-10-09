@@ -1,8 +1,8 @@
-<div class="jumbotron text-center">
+<div class="jumbotron text-center" id="bg">
     <h3>Login</h3>
     <br>
     <br>
-    <form class="form-group" (ngSubmit)="login()" #myForm = "ngForm">
+    <form id="a" class="form-group" (ngSubmit)="login()" #myForm = "ngForm">
         <label for="user.userPassword"> Enter Username</label>
         <input #username="ngModel" type="text" [(ngModel)]="user.userName" required  name ="userame" id="username" pattern="[a-zA-Z ]+" class ="form-control"> 
             <div *ngIf="username.invalid && (username.dirty || username.touched)" class="alert alert-danger">
@@ -28,11 +28,11 @@
             <button class="btn btn-primary" [disabled]="!myForm.form.valid" type="submit">Submit</button>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <a href="#">New User ? Register</a>
+            <a style="color: black;" href="#">New User ? Register</a>
             <br>
             <br>
             <br>
-            <a href="#">Forgot Password??</a>
+            <a style="color: black;"  href="#">Forgot Password??</a>
     </form>
 </div>
 
