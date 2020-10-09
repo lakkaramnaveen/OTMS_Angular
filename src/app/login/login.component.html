@@ -1,5 +1,7 @@
-<h3>Login</h3>
-<div class="jumbotron">
+<div class="jumbotron text-center">
+    <h3>Login</h3>
+    <br>
+    <br>
     <form class="form-group" (ngSubmit)="login()" #myForm = "ngForm">
         <label for="user.userPassword"> Enter Username</label>
         <input #username="ngModel" type="text" [(ngModel)]="user.userName" required  name ="userame" id="username" pattern="[a-zA-Z ]+" class ="form-control"> 
@@ -12,6 +14,7 @@
                 </div>
             </div>
             <br>
+            <br>
             <div class ="form-group">
                 <label for="user.userPassword"> Enter Password</label>
                 <input #password="ngModel" type="password" [(ngModel)]="user.userPassword" required name ="password" id="password" name="password" class ="form-control">
@@ -21,14 +24,15 @@
                     </div>
                 </div>
             </div>
+            <br>
             <button class="btn btn-primary" [disabled]="!myForm.form.valid" type="submit">Submit</button>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <a href="#">New User ? Register</a>
-     
-   
-   <br>
-   <br>
+            <br>
+            <br>
+            <br>
+            <a href="#">Forgot Password??</a>
     </form>
 </div>
 
