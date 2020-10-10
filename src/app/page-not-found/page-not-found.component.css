@@ -1,0 +1,7 @@
+#bg1{
+    background: url(http://localhost:4200/assets/3.jpg);/*http://localhost:4200/assets/1.jpg*/
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding-bottom: 400px;
+}

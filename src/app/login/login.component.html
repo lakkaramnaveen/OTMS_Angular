@@ -4,15 +4,17 @@
     <br>
     <form id="a" class="form-group" (ngSubmit)="login()" #myForm = "ngForm">
         <label for="user.userPassword"> Enter Username</label>
-        <input #username="ngModel" type="text" [(ngModel)]="user.userName" required  name ="userame" id="username" pattern="[a-zA-Z ]+" class ="form-control"> 
-            <div *ngIf="username.invalid && (username.dirty || username.touched)" class="alert alert-danger">
+        <input #username="ngModel" type="text" [(ngModel)]="user.userName" required  name ="userame" id="username" pattern="[a-zA-Z ]+" class ="form-control">
+        <!-- [class.is-invalid]="username.invalid && (username.dirty || username.touched)"> 
+        <label class="text-danger" [class.d-none]="username.valid || username.untouched">Username is required</label><br> -->
+         <div *ngIf="username.invalid && (username.dirty || username.touched)" class="alert alert-danger">
                 <div *ngIf="username.errors.required">
                     Username is Required
                 </div>
                 <div *ngIf="username.errors.pattern">
                     Username Should contain only characters
                 </div>
-            </div>
+            </div> 
             <br>
             <br>
             <div class ="form-group">
@@ -32,7 +34,7 @@
             <br>
             <br>
             <br>
-            <a style="color: black;"  href="#">Forgot Password??</a>
+            <!-- <a style="color: black;"  href="#">Forgot Password??</a> -->
     </form>
 </div>
 
