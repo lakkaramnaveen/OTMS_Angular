@@ -22,13 +22,13 @@ export class LoginComponent implements OnInit {
      this.str = this.user.userName;
       this.service.validateUser(this.user.userName.trim(),this.user.userPassword).subscribe(
         (user)=>{sessionStorage.setItem("username",this.str);this.goto();alert('Login success');},
-        error =>{this.admin()}     
+        error =>{console.log(error);this.admin()}     
       );
   }
   admin(){
     this.str = this.user.userName;
     this.service.validateAdmin(this.user.userName.trim(),this.user.userPassword).subscribe((user)=>{sessionStorage.setItem("adminname",this.str);this.goto1();alert('Login success');},
-    error =>{alert('Invalid Username or Password');window.location.pathname='/login';});  
+    error =>{console.log(error);alert('Invalid Username or Password');window.location.pathname='/login';});  
   }
 
   goto(){
