@@ -9,3 +9,4 @@ export class AppComponent {
   [x: string]: any;
   title = 'route-demo';
 }
+//this is called when bootstrapping in app-module

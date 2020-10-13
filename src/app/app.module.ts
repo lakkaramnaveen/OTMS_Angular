@@ -8,7 +8,8 @@ import { CommonModule } from '@angular/common';
 import { DisplayComponent } from './display/display.component';
 import { Display2Component } from './display2/display2.component';
 import { LoginComponent } from './login/login.component';
-
+//here we will specify the module and imports that we use across the application
+//we will configure what we need, some are done by default like Components
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +25,8 @@ import { LoginComponent } from './login/login.component';
     CommonModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent]//it automatically calls AppComponent class
+  //bootstrap is used to specify which component to call it is different from bootstrap styling
 })
 export class AppModule { }
 

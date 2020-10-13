@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
+import { User } from '../User';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-display2',
@@ -8,9 +11,12 @@ import { Router } from '@angular/router';
 })
 export class Display2Component implements OnInit {
 
-  constructor(private router: Router) { }
+  arr1: Observable<User[]>;
+
+  constructor(private router: Router,private service: UserService) { }
 
   ngOnInit(): void {
+    this.arr1=this.service.getUsers();
   }
 
   logout(){

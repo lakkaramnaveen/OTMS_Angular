@@ -3,10 +3,11 @@
     <div class="col-md-4 col-sm-4 col-xs-12"></div>
     <div class="col-md-4 col-sm-4 col-xs-12">
         <form class="form-container" (ngSubmit)="login()" #myForm = "ngForm">
-            <h2>Login Form</h2>
+            <h1 style="text-align: center;">Login Form</h1>
+            <br>
             <br>
             <div class="form-group form-group-lg">  
-                <label for="username">Enter Username</label>
+                <h5 for="username">Enter Username</h5>
                 <input class="form-control form-control-lg" placeholder="Username" #username="ngModel" type="text" [(ngModel)]="user.userName" required  name ="userame" id="username" pattern="[a-zA-Z ]+">
                 <div *ngIf="username.invalid && (username.dirty || username.touched)"  class="alert alert-danger">
                     <div *ngIf="username.errors.required">
@@ -18,11 +19,14 @@
                 </div> 
             </div>  
             <div class="form-group">
-                <label for="password">Enter Password</label>
-                <input class="form-control form-control-lg" placeholder="Password"  #password="ngModel" type="password" [(ngModel)]="user.userPassword" required name ="password" id="password" name="password" >
-                <div *ngIf="password.invalid && (password.dirty || password.touched)" >
-                    <div *ngIf="password.errors.required" class="alert alert-danger">
+                <h5 for="password">Enter Password</h5>   <!--small letters , capitals , special characters, least 8 characters-->
+                <input class="form-control form-control-lg" placeholder="Password"  #password="ngModel" type="password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" [(ngModel)]="user.userPassword" required name ="password" id="password" name="password" >
+                <div *ngIf="password.invalid && (password.dirty || password.touched)" class="alert alert-danger">
+                    <div *ngIf="password.errors.required">
                       Password is Required
+                    </div>
+                    <div *ngIf="password.errors.pattern">
+                        Password Should be minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character.
                     </div>
                 </div>
             </div>

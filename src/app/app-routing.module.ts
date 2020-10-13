@@ -7,6 +7,8 @@ import { Display2Component } from './display2/display2.component';
 import { LoginComponent } from './login/login.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
+//this is where we specify all the routes and uri path
+//we also used Authguard service canActivate method in constant
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path:'display', component: DisplayComponent ,  canActivate : [AuthguardService]},

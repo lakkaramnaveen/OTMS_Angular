@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot } from '@angular/router';
-
+//here dependency injection takes place
 @Injectable({
   providedIn: 'root'
 })
